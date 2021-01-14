@@ -1,0 +1,40 @@
+# Icons on the footer
+rss: true
+email_address: contact@ritiksahni.me    # Full email address, e.g. "sam@example.com"
+behance:
+bitbucket:
+dribbble:
+facebook:
+flickr:
+gitlab:
+github: "ritiksahni"
+instagram: deep.tech
+keybase:
+linkedin: https://linkedin.com/in/ritik-sahni-22/         # Full URL
+pinterest:
+reddit:
+soundcloud:
+stack_overflow:
+stack_exchange:   # Full URL
+steam:
+tumblr:
+twitter: ritiksahni22          # "twitter username"
+vimeo:
+wordpress:
+youtube:          # Youtube channel token like: UCqECaJ8Gagnn7YCbPEzWH6g
+
+# rss specify feed path
+feed:
+  path: feed.xml
+
+# Share button options
+share:
+  facebook: false
+  twitter: true
+  tumblr:
+  pinterest:
+  pocket:
+  reddit: false
+  linkedin: true
+  wordpress:
+  email: true
