@@ -110,10 +110,11 @@ async function renderUsers() {
 renderUsers();
 //the previous version of the api had a paramter which lead to local file inclusion vulnerability, glad we now have the new version which is secure.
 ```
-  
-<details>
-<summary>Understanding api.js</summary>
-We have 3 functions in the source file:<br>
+
+---
+
+#### Understanding api.js
+<br>We have 3 functions in the source file:<br>
 <br>
 getAPIURL()<br>
 This function just stores ":5000" (port number) appended to the hostname in the variable "str" which is further used in other functions.<br>
@@ -123,7 +124,9 @@ This is an async function which takes the output of getAPIURL() and saves it to 
 <br>
 renderUsers()<br>
 This is also an async function which takes the output of getUsers() and renders the JSON output to HTML to present it on the website on port 80 on books.html, in simple words, data from JSON representation is converted to HTML code in a well formatted manner with the help of this function.
-</details><br>
+<br>
+
+---
 <br>
 
 The comment at the end of the javascript file indicates that previous version of the API implementation had "Local File Inclusion" vulnerability...
@@ -138,10 +141,12 @@ What debugger PIN could it be?
 
 Remember we found port 5000 running a `Werkzeug/0.14.1 Python/3.6.9` server?!
 
-<details>
-<summary>Understanding Werkzeug</summary>
+---
+
+#### Understanding Werkzeug  
 Werkzeug is a utility library for WSGI. WSGI is a protocol which ensures that the web application and the web server are working together and the communication is smooth.
-</details><br>
+
+---
 
 
 ## HTTP (Port 5000)
