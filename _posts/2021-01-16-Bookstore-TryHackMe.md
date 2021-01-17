@@ -13,7 +13,18 @@ tags: [TryHackMe, API, Fuzzing]
 This room is made by [Siddhant Chouhan](https://tryhackme.com/p/sidchn). It takes us through API fuzzing, local file inclusion to gain RCE and exploiting a custom 64-bit binary.
 
 <!--more-->
-## Port Scanning
+
+## Contents <a name="top">
+* [Port Scanning](#port-scanning)
+* [HTTP (Port 80)](#web-80)
+  * [Directory Bruteforce](#dir-brute)
+  * [Understanding API.js](#api-knowledge)
+  * [Understanding Werkzeug / WSGI](#wsgi-knowledge)
+* [HTTP (Port 5000)](#web-5000)
+  * [Logging into /console](#console-login)
+* [Privilege Escalation to root](#privesc)  
+
+## Port Scanning <a name="port-scanning">
 
 ```
 Starting Nmap 7.80 ( https://nmap.org ) at 2021-01-15 20:35 IST
@@ -46,13 +57,13 @@ There is SSH on port 22, HTTP servers on port 80 and 5000. Nmap also indicates a
 s
 Let's first explore the port 80...
 
-## HTTP (Port 80)
+## HTTP (Port 80) <a name="web-80">
 
 ![bookstore-homepage](assets/img/posts/bookstore-thm/port-80-homepage.png)
 
 We can see a website of a "Bookstore" as expected. The burger-menu at top right corner shows us some available pages like login.html, books.html, index.html
 
-#### Directory Bruteforce
+#### Directory Bruteforce <a name="dir-brute">
 
 I ran `gobuster` on port 80 to look for more webpages and got the following result:
 
@@ -113,7 +124,7 @@ renderUsers();
 
 ---
 
-#### Understanding api.js
+#### Understanding api.js <a name="api-knowledge">
 <br>We have 3 functions in the source file:<br>
 <br>
 getAPIURL()<br>
@@ -143,13 +154,13 @@ Remember we found port 5000 running a `Werkzeug/0.14.1 Python/3.6.9` server?!
 
 ---
 
-#### Understanding Werkzeug  
+#### Understanding Werkzeug / WSGI <a name="wsgi-knowledge">
 Werkzeug is a utility library for WSGI. WSGI is a protocol which ensures that the web application and the web server are working together and the communication is smooth.
 
 ---
 
 
-## HTTP (Port 5000)
+## HTTP (Port 5000) <a name="web-5000">
 
 The `debug` panel of Werkzeug can allow us to run python code and eventually run system commands using python modules like os and subprocess.
 
@@ -196,7 +207,7 @@ We can confirm that we found local file inclusion, now here can we see that ther
 
 We get the PIN `123-321-135`. Werkzeug requires you to store the PIN in an environment variable which can be defined through `export` in linux so make sure to check to always check .bash_history to discover potentially sensitive information like we found now.
 
-#### Logging into /console
+#### Logging into /console <a name="console-login">
 
 We can now open http://MACHINE-IP:5000/console and put in the PIN `123-321-135` to get access to the interactive python console.
 
@@ -223,7 +234,7 @@ A few seconds later, we get a callback with /bin/bash as `sid`.
 
 ![reverse-shell](assets/img/posts/bookstore-thm/reverse-shell.png)
 
-## Privilege Escalation
+## Privilege Escalation <a name="privesc">
 
 The home file of user `sid` has a couple of files inside...
 
@@ -299,3 +310,4 @@ We finally got root! It was fun :-)
 > I hope you enjoyed reading this write-up and learnt more about APIs, analyzing source code and utilities like Werkzeug.<br>Hit me up on my socials to give feedback, suggestions for my upcoming work. [Contact Me](/contact)
 
 
+[Back to Top](#top)
