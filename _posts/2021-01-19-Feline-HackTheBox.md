@@ -2,7 +2,7 @@
 layout: post
 title: "Feline - HackTheBox"
 color: rgb(130, 10, 34)
-permalink: "/passage-hackthebox"
+permalink: "/feline-hackthebox"
 excerpt_separator: <!--more-->
 author: ritiksahni
 tags: [HackTheBox, Docker, API, Deserialization]
@@ -10,7 +10,7 @@ tags: [HackTheBox, Docker, API, Deserialization]
 
 <center><img src="assets/img/posts/feline-htb/room_header.png"></center>
 
-Feline is a super fun box created by MinatoTW and MrR3boot, two hackers I admire a lot for their work. This box takes us through exploiting a java deserialization in a custom web application hosted on an Apache Tomcat server to exploiting an RCE in **SaltStack** to gain a shell inside a docker container, and finally getting root on host by exploiting an exposed **docker.sock** file.
+Feline is a super fun box created by [MinatoTW](https://twitter.com/MinatoTW_) and [MrR3boot](https://twitter.com/MrR3boot), two hackers I admire a lot for their work. Give them a follow on their twitter profiles! This box takes us through exploiting a java deserialization in a custom web application hosted on an Apache Tomcat server to exploiting an RCE in **SaltStack** to gain a shell inside a docker container, and finally getting root on host by exploiting an exposed **docker.sock** file.
 
 <!--more-->
 
@@ -327,3 +327,5 @@ curl -s -X POST --unix-socket /var/run/docker.sock http://localhost/containers/h
 We should receive a connection in our netcat listener, just go to /mnt/root/ and read the root.txt, we mount the / of root to /mnt of the container so that is why we can explore the whole filesystem of inside /mnt of `hack_feline`.
 
 I really enjoyed this box very much, it had lots of new things for me to learn! Hit me up on my [socials](/contact) for any question.
+
+[Back to Top](#top)
