@@ -21,6 +21,7 @@ Feline is a super fun box created by [MinatoTW](https://twitter.com/MinatoTW_) a
 * [Privilege Escalation](#privesc)
   * [Understanding the Exploit](#understanding-exploit)
 * [Docker Breakout](#docker-breakout)
+  * [Understanding /var/run/docker.sock](#understanding-sock)
 
 ## Port Scanning <a name="port-scanning">
 
@@ -269,7 +270,7 @@ I got this hint from running `history` command in the docker shell. A command wa
 
 All unix socket files allow us to communicate with a communications endpoint (in this case, it's docker) and allow exchange of  data.
 
-Unix socket files works similar to how web API works.
+Unix socket files works similar to how APIs work.
 
 
 ---
@@ -326,6 +327,7 @@ curl -s -X POST --unix-socket /var/run/docker.sock http://localhost/containers/h
 
 We should receive a connection in our netcat listener, just go to /mnt/root/ and read the root.txt, we mount the / of root to /mnt of the container so that is why we can explore the whole filesystem of inside /mnt of `hack_feline`.
 
-I really enjoyed this box very much, it had lots of new things for me to learn! Hit me up on my [socials](/contact) for any question.
+I really enjoyed this box very much, it had lots of new things for me to learn! 
+<br>Hit me up on my socials to give feedback, suggestions for my upcoming work. [Contact Me](/contact)
 
 [Back to Top](#top)

@@ -54,7 +54,7 @@ Nmap done: 1 IP address (1 host up) scanned in 28.04 seconds
 We can see port 22, 80, 5000 open.
 
 There is SSH on port 22, HTTP servers on port 80 and 5000. Nmap also indicates about `/robots.txt` file on port 5000.
-s
+
 Let's first explore the port 80...
 
 ## HTTP (Port 80) <a name="web-80">
