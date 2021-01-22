@@ -221,7 +221,7 @@ os.popen('cat user.txt').read()
 
 This code will execute 'ls' command and list out the files in current directory and also give us the user flag for this machine!
 
-![console-ls](assets/img/posts/bookstore-thm/port-5000-userflag-console.png)
+![console-ls](assets/img/posts/bookstore-thm/port-5000-userflag-console.jpg)
 
 For a proper reverse shell we can use a python reverse shell script to get a callback on our host machine with /bin/bash
 
