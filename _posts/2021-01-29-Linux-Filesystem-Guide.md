@@ -48,7 +48,7 @@ In the modern days, the most used filesystem among majority of linux systems is 
 
 Different filesystems requires API (Application Programming Interface) to interact with the objects in a system like various available files and directories. Such APIs provide a way to create, move, rename, edit, delete and do more such things inside a filesystem.
 
-You can get more information about the API calls from [here](https://www.kernel.org/doc/html/v4.14/filesystems/index.html#linux-filesystems-api)
+You can get more information about the API calls from [https://www.kernel.org/doc/html/v4.14/filesystems/index.html#linux-filesystems-api](https://www.kernel.org/doc/html/v4.14/filesystems/index.html#linux-filesystems-api)
 
 ---
 
@@ -128,7 +128,7 @@ It contains the system binaries to run different programs and applications. Some
 
 __/boot__
 
-It contains the files which a system requires for booting up. Messing up with one of the files in this directory is **not recommended** as it can lead to problems with the boot up of your operating system.
+It contains the files which a system requires for booting up. Messing up with one of the files in this directory is **not recommended** as it can lead to problems while booting up your operating system.
 
 __/dev__
 
@@ -150,7 +150,7 @@ This directory consists of all the libraries, these libraries are used by the pr
 
 __/lost+found__
 
-This directory is mainly used by `fsck`. All the corrupted data found by `fsck` is placed in this directory /lost+found.
+This directory is mainly used by `fsck`. All the corrupted data found by [fsck](https://linux.die.net/man/8/fsck) is placed in this directory /lost+found.
 
 __/media__
 
@@ -220,12 +220,12 @@ Let's understand some of these files within /proc :
 
 | Endpoint                  | Description |
 | :---                      | :---        |
-| /proc/\[PID\]cmdline             | It gives the exact command which was used to invoke the process. It can sometime help us understand the exact configuration for that process by understanding the arguments placed            |
-| /proc/\[PID\]stat                | It gives us statistics about the process. Refer to [this StackOverflow answer](https://stackoverflow.com/a/60441542) for detailed explanation on the format of its output.
-| /proc/\[PID\]environ             | It tells us the environment variables with which the process is running.
-| /proc/\[PID\]cwd                 | It's a symlink to the current working directory.
-| /proc/\[PID\]mountinfo           | Displays mount information of a process.
-| /proc/\[PID\]io                  | It contains input/output information of a process.
+| /proc/\[PID\]/cmdline             | It gives the exact command which was used to invoke the process. It can sometime help us understand the exact configuration for that process by understanding the arguments placed            |
+| /proc/\[PID\]/stat                | It gives us statistics about the process. Refer to [this StackOverflow answer](https://stackoverflow.com/a/60441542) for detailed explanation on the format of its output.
+| /proc/\[PID\]/environ             | It tells us the environment variables with which the process is running.
+| /proc/\[PID\]/cwd                 | It's a symlink to the current working directory.
+| /proc/\[PID\]/mountinfo           | Displays mount information of a process.
+| /proc/\[PID\]/io                  | It contains input/output information of a process.
 
 There are also some directories within /proc/\[PID\] such as **`/proc/\[PID\]/net`** which gives network information (it can be helpful during reconnaissance of the network), **`/proc/\[PID\]/map_files`** which contains information about the **memory mapped files** and has entries named by memory region start and end address pair (e.g 7f4dd6136000-7f4dd6137000) and symlinks to the actual libraries.
 
