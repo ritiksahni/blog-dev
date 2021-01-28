@@ -32,7 +32,7 @@ Linux supports several filesystems including ext2, ext3, ext4, xfs, btrfs, squas
 
 These filesystems provides some basic functionality like storing data under a well-structured hierarchy of directories and files, defining access rights and permissions, system calls to interact with the filesystem objects like files and directories.
 
-In the modern days, the most used filesystem among majority of linux systems is **EXT4 (Fourth Extended File System)**, a. It is the default filesystem for distributions like Debian and Ubuntu. It is also the latest filesystem from the ext* family. From the previous versions, EXT4 offers better performance and reliability, reduced fragmentation, faster interactive repairs (fsck). EXT4 was started from Linux Kernel 2.6.19.
+In the modern days, the most used filesystem among majority of linux systems is **EXT4 (Fourth Extended File System)**, it is the default filesystem for distributions like Debian and Ubuntu. It is also the latest filesystem from the ext* family. From the previous versions, EXT4 offers better performance and reliability, reduced fragmentation, faster interactive repairs (fsck). EXT4 was started from Linux Kernel 2.6.19.
 
 #### Filesystem Properties <a name="fs-props">
 
