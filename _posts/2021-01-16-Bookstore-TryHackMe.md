@@ -127,13 +127,13 @@ renderUsers();
 #### Understanding api.js <a name="api-knowledge">
 <br>We have 3 functions in the source file:<br>
 <br>
-getAPIURL()<br>
+- __getAPIURL()__<br>
 This function just stores ":5000" (port number) appended to the hostname in the variable "str" which is further used in other functions.<br>
 <br>
-getUsers()<br>
+- __getUsers()__<br>
 This is an async function which takes the output of getAPIURL() and saves it to a variable "u" and makes the request to the formed URL (http://MACHINE-IP:5000/api/v2/resources/books/random4) and returns the JSON response.<br>
 <br>
-renderUsers()<br>
+- __renderUsers()__<br>
 This is also an async function which takes the output of getUsers() and renders the JSON output to HTML to present it on the website on port 80 on books.html, in simple words, data from JSON representation is converted to HTML code in a well formatted manner with the help of this function.
 <br>
 
@@ -307,7 +307,8 @@ We can use `1573743953` as input and we will pass the check. We should get a she
 
 We finally got root! It was fun :-)
 <br><br>
-> I hope you enjoyed reading this write-up and learnt more about APIs, analyzing source code and utilities like Werkzeug.<br>Hit me up on my socials to give feedback, suggestions for my upcoming work. [Contact Me](/contact)
+
+**I hope you enjoyed reading this write-up and learnt more about APIs, analyzing source code and utilities like Werkzeug.<br>Hit me up on my socials to give feedback, suggestions for my upcoming work. [Contact Me](/contact)**
 
 
 [Back to Top](#top)
