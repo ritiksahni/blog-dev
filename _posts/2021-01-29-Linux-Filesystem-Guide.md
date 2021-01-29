@@ -17,7 +17,7 @@ Hey! This article will explain you things you need to know about the Linux files
 ## Contents <a name="top">
 * [About Filesystems](#about-fs)
     * [Filesystem Properties](#fs-props)
-* [Filesystem API](#filesystem-api)
+* [Aspects of filesystem](#fs-aspects)
 * [Virtual File System](#vfs)
 * [Directory Structure](#directory-structure)
     * [Understanding the Structure](#understanding-structure)
@@ -28,7 +28,7 @@ Hey! This article will explain you things you need to know about the Linux files
 
 ## About Filesystems <a name="about-fs">
 
-Linux supports several filesystems including ext2, ext3, ext4, xfs, btrfs, squashfs and many more.
+Linux supports several filesystems including **ext2, ext3, ext4, xfs, btrfs, squashfs** and many more.
 
 These filesystems provides some basic functionality like storing data under a well-structured hierarchy of directories and files, defining access rights and permissions, system calls to interact with the filesystem objects like files and directories.
 
@@ -44,11 +44,37 @@ In the modern days, the most used filesystem among majority of linux systems is 
 
 ---
 
-## Filesystem API <a name="filesystem-api">
+## Aspects of Filesystem <a name="fs-aspects">
+
+- **Filesystem API**  
 
 Different filesystems requires API (Application Programming Interface) to interact with the objects in a system like various available files and directories. Such APIs provide a way to create, move, rename, edit, delete and do more such things inside a filesystem.
 
 You can get more information about the API calls from [https://www.kernel.org/doc/html/v4.14/filesystems/index.html#linux-filesystems-api](https://www.kernel.org/doc/html/v4.14/filesystems/index.html#linux-filesystems-api)
+
+- **Superblock**
+
+The first block of the partition contains metadata or the information required to organise the data structurally based on the filesystem. This block is known as the Superblock. In web applications, the way HTTP headers are above the body, and consists of important information, the same way superblock is the block of important data and it comes first in a partition.
+
+- **File naming structure**  
+
+Every file we see has a name to it, it obviously helps us identify and distinguish between different files. However, there can be certain limitations over naming a file or directory in a filesytem. Some filesystems allow case-sensitive naming and some doesn't. In that case, `abc` and `AbC` would be 2 different directories or files even if there's just the difference of letter cases.
+
+- **Metadata**  
+
+Filesystem may store data such as file creation time, file modification date, last accessed, permissions, file attributes (read/write), content length, filename etc. Some file systems provide for user defined attributes such as the author of the document, the character encoding of a document or the size of an image.
+
+- **Integrity**  
+
+Filesystem is also responsible for mainting the integrity of the files by ensuring if any file in filesystem terminates/behaves abnormally and updating metadata or the contents. The filesytem must also create logs in case of different activities or errors being occurred.
+
+- **Management of Data**  
+
+A key purpose of the filesystem is to allow a user to interact with the data within the system. The written data is continuosly collected in the form of bytes and stored in an efficient manner and retrieves data from filesystem in case user tries to read it.
+
+- **Inodes**  
+
+Inodes are very simple to understand and are important in filesystems. It stands for `Index Nodes` and is a data structure containing the attributes of files and directories along with the location of the data in the disk block. It simply points to the data.
 
 ---
 
@@ -251,7 +277,7 @@ Example: If you have connected a USB drive to the machine and it's name is `/dev
 ```bash
 mkdir /mnt/usb-drive-mount
 mount /dev/sdb /mnt/usb-drive-mount
-cd usb-drive-mount
+cd /mnt/usb-drive-mount
 
 # We can now see all the contents of the USB device in /mnt/usb-drive-mount
 ls
@@ -274,9 +300,21 @@ So far in this article we have discussed mostly about the EXT4 filesystem as it'
 
 - **ZFS** - Developed in 2001, this has features like snapshots, pooled storage, data scrubbing, simple administration etc.
 
+- **SquashFS** - Developed in 2002, it is a read-only filesystem which compresses data such as inodes, files, directories etc. It supports several compression algorithms.
 
 ---
 
 **I hope you enjoyed reading this article and learnt about filesystems, feel free to message me on my twitter/discord for feedback, suggestions or questions! [Contact Me](/contact)**
+
+<br><br>
+#### References
+You can read the following references for detailed information on each of the topics.
+
+[https://en.wikipedia.org/wiki/Inode](https://en.wikipedia.org/wiki/Inode)  
+[https://medium.com/@emmanuelbashorun/linux-file-system-virtual-file-system-vfs-layer-part-3-79235c40a499](https://medium.com/@emmanuelbashorun/linux-file-system-virtual-file-system-vfs-layer-part-3-79235c40a499)  
+[https://opensource.com/life/16/10/introduction-linux-filesystems](https://opensource.com/life/16/10/introduction-linux-filesystems)  
+[https://www.javatpoint.com/linux-file-system](https://www.javatpoint.com/linux-file-system)  
+[https://opensource.com/article/17/5/introduction-ext4-filesystem](https://opensource.com/article/17/5/introduction-ext4-filesystem)  
+
 
 [Back to Top](#top)
