@@ -23,7 +23,7 @@ Hey! This article will explain you things you need to know about the Linux files
     * [Understanding the Structure](#understanding-structure)
 * [Magical /proc](#magical-proc)
 * [Mounting](#mounting)
-
+* [Other Filesystems](#other-fs)
 ---
 
 ## About Filesystems <a name="about-fs">
@@ -290,7 +290,7 @@ umount /mnt/usb-drive-mount
 ```
 ---
 
-## Other Filesystems <a name="other-filesystems">
+## Other Filesystems <a name="other-fs">
 
 So far in this article we have discussed mostly about the EXT4 filesystem as it's our modern day filesystem and we encounter it probably everyday if we use linux but there are some other famous filesystems which we should know about atleast a little so let's dive into it!
 
