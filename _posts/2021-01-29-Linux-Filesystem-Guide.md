@@ -24,6 +24,7 @@ Hey! This article will explain you things you need to know about the Linux files
 * [Magical /proc](#magical-proc)
 * [Mounting](#mounting)
 * [Other Filesystems](#other-fs)
+
 ---
 
 ## About Filesystems <a name="about-fs">
@@ -45,6 +46,8 @@ In the modern days, the most used filesystem among majority of linux systems is 
 ---
 
 ## Aspects of Filesystem <a name="fs-aspects">
+
+![ext4-illustration](assets/img/posts/linux-fs/ext4_image.png)
 
 - **Filesystem API**  
 
