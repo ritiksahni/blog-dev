@@ -21,6 +21,7 @@ Worker is a Windows box created by [ekenas](https://www.hackthebox.eu/home/users
     * [Understanding Version Control System](#understanding-vcs)
 * [Privilege Escalation to Robisl](#privesc-robisl)
 * [Privilege Escalation to Administrator](#privesc-admin)
+    * [Understanding DevOps Pipelines](#understanding-pipelines)
 
 ---
 
@@ -315,6 +316,12 @@ Click on "Run a one-liner script" and read the root flag!
 ![root-flag](assets/img/posts/worker-htb/read-root-flag.png)
 
 We got root flag! 
+
+We did it, let's now understand "Pipelines" and how they actually work.
+
+#### Understanding DevOps Pipelines <a name="understanding-pipelines">
+
+In software engineering, this term is very popular. Pipelines are a set of practices that are used in testing and deployment of software. Most of the practices in software engineering are quite common and hence we can automate those things by using Pipelines. They essentially build, test and deploy applications very fast and makes the whole deployment process efficient and organized. There can be several stages in a pipeline which uses different test cases given by developers. There are many frameworks which can help in creating DevOps pipelines such as **Jenkins**, **Travis CI**, **Circle CI**, **TeamCity** etc.
 
 **This was it! A really fun box, I got to use Azure DevOps for the first time. Hope you liked this walkthrough and feel free to contact me on my socials for feedback, suggestions!** [Contact Me](/contact)
 
