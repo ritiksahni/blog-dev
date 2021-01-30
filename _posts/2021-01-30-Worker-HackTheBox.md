@@ -48,9 +48,9 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 We can observe that 3 ports are open:
 
-80 - HTTP (Microsoft IIS httpd 10.0)
-3690 - Subversion
-5985 - HTTP (Microsoft HTTPAPI)
+80 - HTTP (Microsoft IIS httpd 10.0)  
+3690 - Subversion  
+5985 - HTTP (Microsoft HTTPAPI)  
 
 
 SVN is very interesting here and we can use an nmap script 'svn-brute' to enumerate more of this service.
