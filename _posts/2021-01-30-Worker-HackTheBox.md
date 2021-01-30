@@ -96,7 +96,7 @@ It dumps the source code of `dimension.worker.htb`, we will first proceed with a
 #### Understanding Version Control System <a name="understanding-vcs">
 
 There are several famous version control systems such as Git, Mercurial, Subversion, Perforce etc.
-They are basically software utilities used to manage versions projects, source codes. They are mostly used by developer teams and people collaborating. VCS provides a simple way to create different versions of a software and release, roll-back to specific versions and do the needful tasks.
+They are basically software utilities used to manage versions of projects, source codes. They are mostly used by developer teams and people collaborating. VCS provides a simple way to create different versions of a software and release, roll-back to specific versions and do the needful tasks.
 
 ---
 
@@ -168,7 +168,7 @@ We now have access to the live repositories of the subdomains on the server, we 
 I used the reverse shell by borjmz ([https://github.com/borjmz/aspx-reverse-shell](https://github.com/borjmz/aspx-reverse-shell)) for this task.
 
 
-For uploading it, go to any repository e.g. spectral and click on "New" and then proceed adding the file contents of shell.aspx and commit the changes, there is a small issue here... We can't commit the file addition to the master branch directly but we can create a new branch and create a "Pull Request". As soon as that is done, we can see the merging policies on the right side:
+For uploading it, go to any repository e.g. spectral and click on "New" and then proceed adding the file contents of shell.aspx and commit the changes, there is a small issue here... We can't commit the file addition to the master branch directly but we can create a new branch and create a "Pull Request". As soon as that is done, we can see the merging policies on the right side.
 
 It won't allow us to merge the pull request without an approval of the reviewer (we can give it ourselves), all comments resolved, and without associating a work item (such as a task).
 
@@ -180,7 +180,8 @@ In Azure DevOps, we can use work items to manage different tasks, bugs and other
 
 ---
 
-Policies:
+We satisfy the policies by associating a work item, approving project and the 3rd check mark should already have a green check as there are no comments in the PR and hence no resolution is required.
+
 ![policies](assets/img/posts/worker-htb/merge-policies.png)
 
 We can now successfully merge the pull request.
@@ -205,6 +206,57 @@ However, I wasn't able to use `cd` to go into W:\ but I was able to use `dir` to
 
 Looking into these directories I found an interesting file `passwd` which is located at `W:\svnrepos\www\passwd` to be precise. It contains many user/password entries.
 
+File contents of passwd:
+
+```
+### This file is an example password file for svnserve.
+### Its format is similar to that of svnserve.conf. As shown in the
+### example below it contains one section labelled [users].
+### The name and password for each user follow, one account per line.
+
+[users]
+nathen = wendel98
+nichin = fqerfqerf
+nichin = asifhiefh
+noahip = player
+nuahip = wkjdnw
+oakhol = bxwdjhcue
+owehol = supersecret
+paihol = painfulcode
+parhol = gitcommit
+pathop = iliketomoveit
+pauhor = nowayjose
+payhos = icanjive
+perhou = elvisisalive
+peyhou = ineedvacation
+phihou = pokemon
+quehub = pickme
+quihud = kindasecure
+rachul = guesswho
+raehun = idontknow
+ramhun = thisis
+ranhut = getting
+rebhyd = rediculous
+reeinc = iagree
+reeing = tosomepoint
+reiing = isthisenough
+renipr = dummy
+rhiire = users
+riairv = canyou
+ricisa = seewhich
+robish = onesare
+robisl = wolves11
+robive = andwhich
+ronkay = onesare
+rubkei = the
+rupkel = sheeps
+ryakel = imtired
+sabken = drjones
+samken = aqua
+sapket = hamburger
+sarkil = friday
+```
+
 As we know that there is a user `robisl` in the system, we can use the password from `W:\svnrepos\www\passwd` to log in as `robisl` in the machine using tools like [evil-winrm](https://github.com/Hackplayers/evil-winrm).
 
 The password of robisl is `wolves11`.
@@ -225,8 +277,7 @@ We now get access to Azure DevOps services as robisl using the same password as 
 
 We can now observe a new project which is `PartsUnlimited`.
 
-For execute commands as Administrator, we now need to create a new build pipeline using Azure Pipelines. Click on __Pipelines__ on the left tab and click on __Builds > New Pipeline > Azure Repos Git > PartsUnlimited > Starter Pipeline__
-... Add the following contents to azure-pipelines.yaml
+For execute commands as Administrator, we now need to create a new build pipeline using Azure Pipelines. Click on __Pipelines__ on the left tab and click on __Builds > New Pipeline > Azure Repos Git > PartsUnlimited > Starter Pipeline__  and add the following contents to azure-pipelines.yaml:
 
 ```yaml
 # Starter pipeline
@@ -255,7 +306,7 @@ Click on __Save and Run__ and click on *Create a new branch* option and lastly, 
 
 It used the agent `Hamilton11` and the default pool: 'Setup'.
 
-> Agent pools are there so you can share agent machines across projects and in this case we used Hamilton11 to queue our job of running a simple script.
+> Agent pools are there so you can share agent machines across projects and in this case we used default pool to queue our job of running a simple script.
 
 ![build-complete](assets/img/posts/worker-htb/build-complete.png)
 
