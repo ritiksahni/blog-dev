@@ -119,6 +119,10 @@ After playing around with the new message input for a while, I saw that the inpu
 
 Developers use template engines in web applications to present dynamic content, in this case, we can see that the XML content is based upon the user-controlled post titles and that indicates that a template engine could be in use in the backend. There are many popular template engines like Mako, Smarty, Jinja2, Twig. In case the user-controlled data is presented as dynamic content and input sanitization is not used then the user can store arbitrary payload which makes the template engine reveal sensitive information or execute system commands based upon the template engine's configuration.
 
+Refer to the following diagram to understand how to detect the back-end template engine if the application is vulnerable to SSTI:
+
+![diagram](assets/img/posts/doctor-htb/diagram.png)
+
 P.S. This blog also uses a template engine ;-)
 
 ---
