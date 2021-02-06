@@ -11,10 +11,12 @@ I am a 15 years old cybersecurity enthusiast. I participate in capture the flag 
 I know some Python, C++, Javascript and I got my eJPT certification in 2020.
 
 
-[Twitter](https://twitter.com/ritiksahni22)  
+You can [Contact Me](/contact) for any questions, feedback and suggestions for the blog page!
+
+<!-- [Twitter](https://twitter.com/ritiksahni22)  
 [Instagram](https://www.instagram.com/r.sahni22)  
 [Bugcrowd](https://bugcrowd.com/ritiksahni)  
-Discord - http.deep#6746  
+Discord - http.deep#6746   -->
 
 <br><br>
 

@@ -5,7 +5,7 @@ permalink: "/worker-hackthebox"
 color: rgb(60, 45, 179)
 excerpt_separator: <!--more-->
 author: ritiksahni
-tags: [HackTheBox, Azure, Windows]
+tags: [HackTheBox, Azure, Windows, DevOps, VCS, SVN]
 ---
 
 <center><img src="assets/img/posts/worker-htb/worker_header.png"></center><br>
