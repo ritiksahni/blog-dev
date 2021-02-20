@@ -327,7 +327,6 @@ curl -s -X POST --unix-socket /var/run/docker.sock http://localhost/containers/h
 
 We should receive a connection in our netcat listener, just go to /mnt/root/ and read the root.txt, we mount the / of root to /mnt of the container so that is why we can explore the whole filesystem of inside /mnt of `hack_feline`.
 
-I really enjoyed this box very much, it had lots of new things for me to learn! 
-<br>Hit me up on my socials to give feedback, suggestions for my upcoming work. [Contact Me](/contact)
+**I really enjoyed this box very much, it had lots of new things for me to learn! <br>Hit me up on my socials to give feedback, suggestions for my upcoming work. [Contact Me](/contact)**
 
 [Back to Top](#top)
