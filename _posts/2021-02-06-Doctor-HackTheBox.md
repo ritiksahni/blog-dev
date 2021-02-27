@@ -22,7 +22,6 @@ $-->
 * [Port Scanning](#port-scanning)
 * [HTTP (Port 80)](#web-80)
     * [Understanding SSTI](#understanding-ssti)
-    * [Understanding System Groups](#understanding-groups)
 * [Privilege Escalation to Shaun](#privesc-shaun)
     * [Understanding System Groups](#understanding-groups)
 * [Privilege Escalation to root](#privesc-root)
