@@ -5,7 +5,7 @@ color: rgb(46, 10, 130)
 permalink: "/academy-hackthebox"
 excerpt_separator: <!--more-->
 author: ritiksahni
-tags: [HackTheBox]
+tags: [HackTheBox, PHP, Laravel, Deserialization, GTFOBins, RCE, Composer]
 ---
 
 <center><img src="/assets/img/posts/academy-htb/academy_header.png"></center><br>
