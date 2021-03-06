@@ -5,14 +5,15 @@ permalink: "/passage-hackthebox"
 color: rgb(16, 55, 84)
 excerpt_separator: <!--more-->
 author: ritiksahni
-tags: [HackTheBox, DBUS, RCE, IPC]
+tags: [HackTheBox, DBUS, RCE, IPC, Web]
 ---
 
 Passage is an interesting linux machine, it takes us through exploiting an RCE in CuteNews 2.1.2 content management system to exploiting USB-Creator D-Bus interface to gain root access.
 
 <!--more-->
 
-![passage-info](screenshots/passage-header.png)
+<center><img src="/assets/img/posts/passage-htb/passage-header.png"></center><br>
+
 
 # Contents
 * [Port Scanning](#port-scanning)
@@ -54,7 +55,7 @@ We got SSH (port 22) and HTTP (port 80) open.
 
 Opening `http://10.10.10.206` in browser gives us the homepage of `Passage News`.
 
-![port-80-homepage](screenshots/web-80-homepage.png)
+![port-80-homepage](assets/img/posts/passage-htb/web-80-homepage.png)
 
 Observing the footer, we get `CuteNews` and searching on google tells us that it is a news/content management system. The version 2.1.2 is vulnerable to RCE (CVE-2019-11447).
 
@@ -183,7 +184,7 @@ The variable `payload` has a PHP payload which system commands with the value su
 ## Exploitation <a name="exploitation">
 `python3 exploit.py`
 
-![exploit.py](/home/deep/Documents/work/blogging/markdown/notes/screenshots/cutenews-rce-exploit.png)
+![exploit.py](/home/deep/Documents/work/blogging/markdown/notes/assets/img/posts/passage-htb/cutenews-rce-exploit.png)
 
 Running the exploit allows us to run system commands but to have an actual shell I used netcat listener and sent /bin/sh from the passage box.
 
@@ -237,7 +238,7 @@ We get cracked password of only one hash which is `e26f3e86d1f8108120723ebe690e5
 
 We can use this password to switch user to paul from www-data using `su paul`.
 
-![su-paul](screenshots/su-paul.png)
+![su-paul](assets/img/posts/passage-htb/su-paul.png)
 
 ---
 
@@ -249,7 +250,7 @@ With this logic we can try to straight up login into nadav using SSH without any
 
 > Make sure to SSH from the victim box itself as only Paul is having access to SSH into nadav, we don't ;-)
 
-![ssh-nadav](screenshots/ssh-nadav.png)
+![ssh-nadav](assets/img/posts/passage-htb/ssh-nadav.png)
 
 
 We are in! Time to finally gain root and here comes the most interesting part...
@@ -291,7 +292,7 @@ cat /tmp/id_rsa
 ssh -i /tmp/id_rsa root@localhost
 ```
 
-![rooted](screenshots/rooted-box.png)
+![rooted](assets/img/posts/passage-htb/rooted-box.png)
 
 
 
