@@ -22,7 +22,7 @@ Passage is an interesting linux machine, it takes us through exploiting an RCE i
 * [PrivEsc to Paul](#privesc-paul)
 * [PrivEsc to Nadav](#privesc-nadav)
 * [PrivEsc to root](#privesc-root)
-* [Understanding D-Bus](#dbus-info)
+    * [Understanding D-Bus](#dbus-info)
 
 ## Port Scanning <a name="port-scanning">
 
@@ -298,7 +298,7 @@ ssh -i /tmp/id_rsa root@localhost
 
 ---
 
-**I hope you enjoyed the writeup and learnt new stuff! Feel free to message me on my socials for feedback/suggestions.**
+**I hope you enjoyed the writeup and learnt new stuff! Feel free to message me on my socials for feedback/suggestions. [Contact Me](/contact)**
 
 Thank you for reading!
 
