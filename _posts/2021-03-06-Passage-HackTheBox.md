@@ -184,7 +184,7 @@ The variable `payload` has a PHP payload which system commands with the value su
 ## Exploitation <a name="exploitation">
 `python3 exploit.py`
 
-![exploit.py](/home/deep/Documents/work/blogging/markdown/notes/assets/img/posts/passage-htb/cutenews-rce-exploit.png)
+![exploit.py](assets/img/posts/passage-htb/cutenews-rce-exploit.png)
 
 Running the exploit allows us to run system commands but to have an actual shell I used netcat listener and sent /bin/sh from the passage box.
 
