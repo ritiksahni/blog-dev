@@ -45,7 +45,7 @@ There are a lot of filters to use and narrow down the scope of data and the way 
 
 Let's dive into the technical part of the blog. Spyse has many features and filters to do our enumeration and narrow down the results based on our needs. It offers tools for tasks such as lookups for Domains, ASN, IP addresses, SSL certificates, MX recordss, WHOIS data.
 
-There are more unique features such as reconnaissance using AdSense IDs and CVE search.
+There are more unique features such as reconnaissance using AdSense IDs, and CVE search.
 
 
 You can visit [https://spyse.com/](https://spyse.com/) and you'll be presented with a simple search bar to query any domain, IP, Organization etc.
@@ -154,13 +154,13 @@ Spyse regularly tweets about some CVEs, search presets for the community! Here's
 </center>
 
 
-They have mentioned about GavCMS which has some critical CVEs on it, they've given a Spyse URL which is the link to discover targets using GavCMS through the technologies feature.
+They have mentioned about GravCMS which has some critical CVEs on it, they've given a Spyse URL which is the link to discover targets using GravCMS through the technologies feature.
 
 https://spyse.com/target/technology/Grav
 
 ---
 
-Spyse has a page for search presets which has already built advanced search queries ready for use. Although there isn't much stuff available there but I hope they soon add more presets and interesting search queries.
+Spyse has a page for search presets which has already built advanced search queries ready for use. Although there isn't much stuff available there but I hope they soon add more presets, and interesting search queries.
 
 The presets page can be found here: [https://spyse.com/explore/presets](https://spyse.com/explore/presets)
 
