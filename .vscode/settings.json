@@ -1,3 +1,23 @@
 {
-    "discord.enabled": true
+    "discord.enabled": false,
+    "grammarly.overrides": [
+        {
+            "files": [
+                "**/_posts/2021-04-14-aaa.md"
+            ],
+            "config": {
+                "audience": "knowledgeable",
+                "dialect": "american",
+                "domain": "technical",
+                "emotions": [
+                    "confident",
+                    "optimistic",
+                    "respectful"
+                ],
+                "goals": [
+                    "inform"
+                ]
+            }
+        }
+    ]
 }
