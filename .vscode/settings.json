@@ -18,6 +18,18 @@
                     "inform"
                 ]
             }
+        },
+        {
+            "files": [
+                "**/_posts/2021-05-08-web.md"
+            ],
+            "config": {
+                "audience": "expert",
+                "dialect": "american",
+                "domain": "technical",
+                "emotions": [],
+                "goals": []
+            }
         }
     ]
 }

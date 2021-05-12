@@ -6,10 +6,11 @@ feature-img: "assets/img/pexels/travel.jpeg"
 tags: [About]
 ---
 
-I am a 15 years old cybersecurity enthusiast. I participate in capture the flag competitions and bug bounty programs, I have been acknowledged by several companies and organizations. Besides that, I like to listen to music and read books. I like to study about web application security and actively exploring other niches as well.
+I am a 16 years old cybersecurity enthusiast. I participate in capture the flag competitions and bug bounty programs, I have been acknowledged by several companies and organizations. Besides that, I like to listen to music and read books. I like to study web application security and actively exploring other niches as well.
 
-I know some Python, C++, Javascript and I got my eJPT certification in 2020.
+I know some Python, C++, Javascript. I got my eJPT certification in 2020.
 
+You can subscribe to my **email newsletter** for more cybersecurity content and resources - [https://newsletter.ritiksahni.me](https://newsletter.ritiksahni.me)
 
 You can [Contact Me](/contact) for any questions, feedback and suggestions for the blog page!
 
