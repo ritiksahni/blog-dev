@@ -10,7 +10,7 @@ tags: [HackTheBox, Web, MySQL, Ticket Trick]
 
 <center><img src="assets/img/posts/delivery-htb/blog_banner.png" alt="Delivery - Box Info"></center><br>
 
-Delivery is an easy-rated box created by [Ippsec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA). It takes us through exploiting ticket trick to gaining internal chat server access and using the disclosed credentials in the chat to login and find MySQL credentials inside the machine.
+Delivery is an easy-rated box created by [Ippsec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA). It takes us through exploiting ticket trick to gaining internal chat server access and using the disclosed credentials in the chat to login and find MySQL credentials inside the machine. We then find root hash inside MySQL database and crack using Hashcat rules.
 
 <!--more-->
 
