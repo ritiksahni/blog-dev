@@ -5,7 +5,7 @@ color: rgb(23, 71, 82)
 permalink: "/dns-records"
 excerpt_separator: <!--more-->
 author: ritiksahni
-tags: []
+tags: [DNS, DNSSEC]
 ---
 
 <center><img src="/assets/img/posts/dns_records/header.png"></center><br>
